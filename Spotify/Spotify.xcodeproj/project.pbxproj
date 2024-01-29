@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD025E402B67DF590059121A /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E3F2B67DF590059121A /* SettingsModels.swift */; };
 		DDACA1962B6637AC0094D7EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACA1952B6637AC0094D7EA /* AppDelegate.swift */; };
 		DDACA1982B6637AC0094D7EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACA1972B6637AC0094D7EA /* SceneDelegate.swift */; };
 		DDACA19A2B6637AC0094D7EA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACA1992B6637AC0094D7EA /* HomeViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD025E3F2B67DF590059121A /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		DDACA1922B6637AC0094D7EA /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDACA1952B6637AC0094D7EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDACA1972B6637AC0094D7EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				DDACA1D22B663E8A0094D7EA /* Artist.swift */,
 				DDACA1D42B663EA50094D7EA /* UserProfile.swift */,
 				DDACA1D82B6679100094D7EA /* AuthResponse.swift */,
+				DD025E3F2B67DF590059121A /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				DDACA1D52B663EA50094D7EA /* UserProfile.swift in Sources */,
 				DDACA1962B6637AC0094D7EA /* AppDelegate.swift in Sources */,
 				DDACA1D32B663E8A0094D7EA /* Artist.swift in Sources */,
+				DD025E402B67DF590059121A /* SettingsModels.swift in Sources */,
 				DDACA1C22B663D8C0094D7EA /* PlayListViewController.swift in Sources */,
 				DDACA1B42B663C4C0094D7EA /* LibraryViewController.swift in Sources */,
 				DDACA1C02B663D720094D7EA /* PlayerViewController.swift in Sources */,
