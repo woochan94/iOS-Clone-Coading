@@ -37,14 +37,27 @@ class LoginController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let textField = Utilities().textField(withPlaceholder: "Password")
-        textField.isSecureTextEntry = true 
+        textField.isSecureTextEntry = true
         return textField
     }()
     
+    private lazy var loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(.twitterBlue, for: .normal)
+        button.backgroundColor = .white
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView])
+        let stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 20
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -57,6 +70,9 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Selectors
+    @objc func handleLogin() {
+        print("!23")
+    }
     
     // MARK: - Helpers
     
@@ -69,6 +85,6 @@ class LoginController: UIViewController {
         logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
         
         view.addSubview(stackView)
-        stackView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 16, paddingRight: 16, height: 100)
+        stackView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
     }
 }
