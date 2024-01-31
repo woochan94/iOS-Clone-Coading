@@ -20,6 +20,7 @@
 		DD025E722B693BA80059121A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E712B693BA80059121A /* Extensions.swift */; };
 		DD025E752B6942E20059121A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E742B6942E20059121A /* LoginController.swift */; };
 		DD025E772B6943270059121A /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E762B6943270059121A /* RegisterationController.swift */; };
+		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DD025E712B693BA80059121A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DD025E742B6942E20059121A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		DD025E762B6943270059121A /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
+		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DD025E712B693BA80059121A /* Extensions.swift */,
+				DDE73C022B6A41A100CB93D9 /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				DD025E6E2B691ED20059121A /* NotificationController.swift in Sources */,
 				DD025E4E2B691BA20059121A /* AppDelegate.swift in Sources */,
+				DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */,
 				DD025E6C2B691EC00059121A /* ExploreController.swift in Sources */,
 				DD025E722B693BA80059121A /* Extensions.swift in Sources */,
 				DD025E772B6943270059121A /* RegisterationController.swift in Sources */,

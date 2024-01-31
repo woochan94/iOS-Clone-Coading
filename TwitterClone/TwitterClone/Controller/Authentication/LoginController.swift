@@ -20,6 +20,33 @@ class LoginController: UIViewController {
         return imageView
     }()
     
+    private lazy var emailContainerView: UIView = {
+        let view = Utilities().inputContainerView(withImage: #imageLiteral(resourceName: "ic_mail_outline_white_2x-1"), textField: emailTextField)
+        return view
+    }()
+    
+    private lazy var passwordContainerView: UIView = {
+        let view = Utilities().inputContainerView(withImage: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
+        return view
+    }()
+    
+    private let emailTextField: UITextField = {
+        let textField = Utilities().textField(withPlaceholder: "Email")
+        return textField
+    }()
+    
+    private let passwordTextField: UITextField = {
+        let textField = Utilities().textField(withPlaceholder: "Password")
+        textField.isSecureTextEntry = true 
+        return textField
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView])
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
     
     // MARK: - Lifecycle
     
@@ -41,5 +68,7 @@ class LoginController: UIViewController {
         view.addSubview(logoImageView)
         logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
         
+        view.addSubview(stackView)
+        stackView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 16, paddingRight: 16, height: 100)
     }
 }
