@@ -6,18 +6,36 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var isLoggedIn: Bool {
+        return Auth.auth().currentUser != nil
+    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainTabController()
+        if (isLoggedIn) {
+            showMainTabController()
+        } else {
+            showLoginController()
+        }
+       
         window?.makeKeyAndVisible()
     }
+    
+    func showMainTabController() {
+        window?.rootViewController = MainTabController()
+    }
+
+    func showLoginController() {
+        window?.rootViewController = UINavigationController(rootViewController: LoginController())
+    }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -37,6 +37,7 @@ class Utilities {
         textField.textColor = .white
         textField.font = .systemFont(ofSize: 16)
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        textField.autocapitalizationType = .none
         
         return textField
     }

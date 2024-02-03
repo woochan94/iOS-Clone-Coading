@@ -27,31 +27,8 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .twitterBlue
-        if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .twitterBlue
-            appearance.shadowColor = .twitterBlue
-            tabBar.standardAppearance = appearance
-            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
-        }
-        authenticateUserAndConfigureUI()
-    }
-    
-    // MARK: - API
-    
-    func authenticateUserAndConfigureUI() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                let nav = UINavigationController(rootViewController: LoginController())
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true)
-            }
-        } else {
-            configureViewControllers()
-            configureUI()
-        }
+        configureViewControllers()
+        configureUI()
     }
     
     // MARK: - Selectors
@@ -64,14 +41,6 @@ class MainTabController: UITabBarController {
     // MARK: - Helpers
     
     func configureUI() {
-        if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .systemBackground
-            tabBar.standardAppearance = appearance
-            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
-        }
-        
         view.addSubview(actionButton)
         actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 64, paddingRight: 16, width: 56, height: 56)
     }

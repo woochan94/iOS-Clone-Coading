@@ -118,7 +118,9 @@ class RegisterationController: UIViewController {
         let credentials = AuthCredentials(email: email, password: password, fullName: fullName, userName: userName, profileImage: profileImage)
         
         AuthService.shared.registerUser(credentials: credentials) { error, ref in
-            print("Sign up successful")
+            if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                scene.showMainTabController()
+            }
         }
     }
     
