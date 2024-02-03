@@ -24,6 +24,8 @@
 		DD025E792B6E2E3D0059121A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD025E782B6E2E3D0059121A /* GoogleService-Info.plist */; };
 		DD025E7B2B6E39720059121A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E7A2B6E39720059121A /* Constants.swift */; };
 		DD025E7D2B6E46480059121A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E7C2B6E46480059121A /* AuthService.swift */; };
+		DD025E7F2B6E94300059121A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E7E2B6E94300059121A /* UserService.swift */; };
+		DD025E812B6E991A0059121A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E802B6E991A0059121A /* User.swift */; };
 		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		DD025E782B6E2E3D0059121A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD025E7A2B6E39720059121A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD025E7C2B6E46480059121A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DD025E7E2B6E94300059121A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DD025E802B6E991A0059121A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				DD025E7C2B6E46480059121A /* AuthService.swift */,
+				DD025E7E2B6E94300059121A /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		DD025E662B691BE50059121A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD025E802B6E991A0059121A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD025E7F2B6E94300059121A /* UserService.swift in Sources */,
 				DD025E6E2B691ED20059121A /* NotificationController.swift in Sources */,
 				DD025E4E2B691BA20059121A /* AppDelegate.swift in Sources */,
 				DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */,
@@ -303,6 +310,7 @@
 				DD025E722B693BA80059121A /* Extensions.swift in Sources */,
 				DD025E772B6943270059121A /* RegisterationController.swift in Sources */,
 				DD025E7D2B6E46480059121A /* AuthService.swift in Sources */,
+				DD025E812B6E991A0059121A /* User.swift in Sources */,
 				DD025E752B6942E20059121A /* LoginController.swift in Sources */,
 				DD025E682B691D610059121A /* MainTabController.swift in Sources */,
 				DD025E502B691BA20059121A /* SceneDelegate.swift in Sources */,
