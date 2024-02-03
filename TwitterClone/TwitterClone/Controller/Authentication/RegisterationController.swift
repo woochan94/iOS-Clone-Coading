@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterationController: UIViewController {
     
     // MARK: - Properties
     
     private let imagePicker = UIImagePickerController()
+    private var profileImage: UIImage?
     
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -105,7 +107,19 @@ class RegisterationController: UIViewController {
     }
     
     @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        guard let userName = userNameTextField.text else { return }
+        guard let profileImage = self.profileImage else {
+            return
+        }
         
+        let credentials = AuthCredentials(email: email, password: password, fullName: fullName, userName: userName, profileImage: profileImage)
+        
+        AuthService.shared.registerUser(credentials: credentials) { error, ref in
+            print("Sign up successful")
+        }
     }
     
     @objc func handleShowLogin() {
@@ -135,6 +149,8 @@ extension RegisterationController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let profileImage = info[.editedImage] as? UIImage else { return }
         
+        self.profileImage = profileImage
+        
         self.plusPhotoButton.layer.cornerRadius = 128 / 2
         self.plusPhotoButton.layer.masksToBounds = true
         self.plusPhotoButton.imageView?.contentMode  = .scaleAspectFill
@@ -143,7 +159,7 @@ extension RegisterationController: UIImagePickerControllerDelegate, UINavigation
         self.plusPhotoButton.layer.borderWidth = 3
         
         self.plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
-     
+        
         dismiss(animated: true)
     }
     

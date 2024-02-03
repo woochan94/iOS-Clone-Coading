@@ -22,6 +22,8 @@
 		DD025E752B6942E20059121A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E742B6942E20059121A /* LoginController.swift */; };
 		DD025E772B6943270059121A /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E762B6943270059121A /* RegisterationController.swift */; };
 		DD025E792B6E2E3D0059121A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD025E782B6E2E3D0059121A /* GoogleService-Info.plist */; };
+		DD025E7B2B6E39720059121A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E7A2B6E39720059121A /* Constants.swift */; };
+		DD025E7D2B6E46480059121A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E7C2B6E46480059121A /* AuthService.swift */; };
 		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		DD025E742B6942E20059121A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		DD025E762B6943270059121A /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		DD025E782B6E2E3D0059121A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD025E7A2B6E39720059121A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DD025E7C2B6E46480059121A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +70,6 @@
 				0CC54B5F5E496371729EAF87 /* Pods-TwitterClone.debug.xcconfig */,
 				BB038CE2696DD5D6144B29D7 /* Pods-TwitterClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +124,7 @@
 			children = (
 				DD025E712B693BA80059121A /* Extensions.swift */,
 				DDE73C022B6A41A100CB93D9 /* Utilities.swift */,
+				DD025E7A2B6E39720059121A /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 		DD025E622B691BDC0059121A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				DD025E7C2B6E46480059121A /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -297,11 +302,13 @@
 				DD025E6C2B691EC00059121A /* ExploreController.swift in Sources */,
 				DD025E722B693BA80059121A /* Extensions.swift in Sources */,
 				DD025E772B6943270059121A /* RegisterationController.swift in Sources */,
+				DD025E7D2B6E46480059121A /* AuthService.swift in Sources */,
 				DD025E752B6942E20059121A /* LoginController.swift in Sources */,
 				DD025E682B691D610059121A /* MainTabController.swift in Sources */,
 				DD025E502B691BA20059121A /* SceneDelegate.swift in Sources */,
 				DD025E702B691EE30059121A /* ConversationController.swift in Sources */,
 				DD025E6A2B691E930059121A /* FeedController.swift in Sources */,
+				DD025E7B2B6E39720059121A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
