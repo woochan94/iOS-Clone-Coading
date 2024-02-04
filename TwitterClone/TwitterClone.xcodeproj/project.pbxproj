@@ -31,6 +31,7 @@
 		DD025E872B6F8E040059121A /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E862B6F8E040059121A /* TweetService.swift */; };
 		DD025E892B6F92CF0059121A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E882B6F92CF0059121A /* Tweet.swift */; };
 		DD025E8B2B6FC49F0059121A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E8A2B6FC49F0059121A /* TweetCell.swift */; };
+		DD025E8D2B6FE8F70059121A /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E8C2B6FE8F70059121A /* TweetViewModel.swift */; };
 		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		DD025E862B6F8E040059121A /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
 		DD025E882B6F92CF0059121A /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		DD025E8A2B6FC49F0059121A /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		DD025E8C2B6FE8F70059121A /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		DD025E642B691BE10059121A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD025E8C2B6FE8F70059121A /* TweetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				DD025E752B6942E20059121A /* LoginController.swift in Sources */,
 				DD025E682B691D610059121A /* MainTabController.swift in Sources */,
 				DD025E502B691BA20059121A /* SceneDelegate.swift in Sources */,
+				DD025E8D2B6FE8F70059121A /* TweetViewModel.swift in Sources */,
 				DD025E702B691EE30059121A /* ConversationController.swift in Sources */,
 				DD025E6A2B691E930059121A /* FeedController.swift in Sources */,
 				DD025E7B2B6E39720059121A /* Constants.swift in Sources */,
