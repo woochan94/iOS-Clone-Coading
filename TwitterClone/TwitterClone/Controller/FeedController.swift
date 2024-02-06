@@ -16,7 +16,7 @@ class FeedController: UICollectionViewController {
     
     var user: User? {
         didSet {
-           configureLeftBarButton()
+            configureLeftBarButton()
         }
     }
     
@@ -30,7 +30,7 @@ class FeedController: UICollectionViewController {
         let imageView = UIImageView()
         imageView.setDimensions(width: 32, height: 32)
         imageView.layer.cornerRadius = 32 / 2
-        imageView.layer.masksToBounds = true 
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -41,6 +41,11 @@ class FeedController: UICollectionViewController {
         
         configureUI()
         fetchTweets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - API
@@ -62,7 +67,7 @@ class FeedController: UICollectionViewController {
         navigationItem.titleView = imageView
         
         collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
     }
     
     func configureLeftBarButton() {
@@ -96,8 +101,9 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedController: TweetCellDelegate {
-    func handleProfileImageTapped() {
-        let controller = ProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+    func handleProfileImageTapped(_ cell: TweetCell) {
+        guard let tweetUser = cell.tweet?.user else { return }
+        let controller = ProfileController(user: tweetUser)
         navigationController?.pushViewController(controller, animated: true)
     }
 }

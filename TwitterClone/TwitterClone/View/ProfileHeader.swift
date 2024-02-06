@@ -7,9 +7,21 @@
 
 import UIKit
 
+protocol ProfileHeaderDelegate: AnyObject {
+    func handleDismiss()
+}
+
 class ProfileHeader: UICollectionReusableView {
     
     // MARK: - Properties
+    
+    weak var delegate: ProfileHeaderDelegate?
+    
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
     
     private let filterBar = ProfileFilterView()
     
@@ -46,7 +58,6 @@ class ProfileHeader: UICollectionReusableView {
     
     private lazy var editProfileFollowButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Follow", for: .normal)
         button.layer.borderColor = UIColor.twitterBlue.cgColor
         button.layer.borderWidth = 1.25
         button.setTitleColor(.twitterBlue, for: .normal)
@@ -94,13 +105,37 @@ class ProfileHeader: UICollectionReusableView {
         return view
     }()
     
+    private lazy var followingLabel: UILabel = {
+        let label = UILabel()
+        let followTap = UITapGestureRecognizer(target: self, action: #selector(handleFollowingTapped))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(followTap)
+        return label
+    }()
+    
+    private lazy var followersLabel: UILabel = {
+        let label = UILabel()
+        let followTap = UITapGestureRecognizer(target: self, action: #selector(handleFollowersTapped))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(followTap)
+        return label
+    }()
+    
+    private lazy var followStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [followingLabel, followersLabel])
+        stack.axis = .horizontal
+        stack.spacing = 8
+        stack.distribution = .fillEqually
+        return stack
+    }()
+    
     // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configureUI()
-        filterBar.delegate = self 
+        filterBar.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -129,16 +164,42 @@ class ProfileHeader: UICollectionReusableView {
         
         addSubview(underline)
         underline.anchor(left: leftAnchor, bottom: bottomAnchor, width: frame.width / 3, height: 2)
+        
+        addSubview(followStackView)
+        followStackView.anchor(top: stackView.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 12)
     }
     
     // MARK: - Selector
     
     @objc func handleDismiss() {
-        
+        delegate?.handleDismiss()
     }
     
     @objc func handleEditProfileFollow() {
         
+    }
+    
+    @objc func handleFollowingTapped() {
+        
+    }
+    
+    @objc func handleFollowersTapped() {
+        
+    }
+    
+    // MARK: - Helpers
+    
+    func configure() {
+        guard let user = user else { return }
+        let viewModel = ProfileHeaderViewModel(user: user)
+        
+        profileImageView.sd_setImage(with: user.profileImageUrl)
+        fullNameLabel.text = user.fullName
+        userNameLabel.text = "@\(user.userName)"
+        editProfileFollowButton.setTitle(viewModel.actionButtonTitle, for: .normal)
+        
+        followingLabel.attributedText = viewModel.followingsString
+        followersLabel.attributedText = viewModel.followersString
     }
     
 }
