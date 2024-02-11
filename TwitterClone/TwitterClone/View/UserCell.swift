@@ -11,27 +11,30 @@ class UserCell: UITableViewCell {
     
     // MARK: - Properties
     
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.setDimensions(width: 40, height: 40)
         imageView.layer.cornerRadius = 40 / 2
-        imageView.backgroundColor = .twitterBlue
         return imageView
     }()
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 14)
-        label.text = "test"
         return label
     }()
     
     private let fullNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        label.text = "fullName"
         return label
     }()
     
@@ -62,6 +65,14 @@ class UserCell: UITableViewCell {
         
         addSubview(stackView)
         stackView.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 12)
+    }
+    
+    func configure() {
+        guard let user = user else { return }
+        
+        userNameLabel.text = user.userName
+        fullNameLabel.text = user.fullName
+        profileImageView.sd_setImage(with: user.profileImageUrl)
     }
 
 }
