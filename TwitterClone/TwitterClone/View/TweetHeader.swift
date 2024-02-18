@@ -11,6 +11,12 @@ class TweetHeader: UICollectionReusableView {
     
     // MARK: - Properties
     
+    var tweet: Tweet? {
+        didSet {
+            configure()
+        }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -200,6 +206,20 @@ class TweetHeader: UICollectionReusableView {
     }
     
     // MARK: - Helpers
+    
+    func configure() {
+        guard let tweet = tweet else { return }
+        
+        let viewModel = TweetViewModel(tweet: tweet)
+        
+        captionLabel.text = tweet.caption
+        fullNameLabel.text = tweet.user.fullName
+        userNameLabel.text = viewModel.userNameText
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        dateLabel.text = viewModel.headerTimeStamp
+        retweetsLabel.attributedText = viewModel.retweetsAttributedString
+        likesLabel.attributedText = viewModel.likesAttributedString
+    }
     
     func createButton(withImageName imageName: String) -> UIButton {
         let button = UIButton(type: .system)
