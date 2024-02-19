@@ -54,7 +54,7 @@ class MainTabController: UITabBarController {
     
     @objc func actionButtonTapped() {
         guard let user = user else { return }
-        let nav = UINavigationController(rootViewController: UploadTweetController(user: user))
+        let nav = UINavigationController(rootViewController: UploadTweetController(user: user, config: .tweet))
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }
