@@ -168,7 +168,7 @@ class TweetHeader: UICollectionReusableView {
         optionsButton.anchor(right: rightAnchor, paddingRight: 8)
         
         addSubview(stackView)
-        stackView.anchor(top: dateLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 20, height: 40)
+        stackView.anchor(top: dateLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 12, height: 40)
         
         addSubview(actionStack)
         actionStack.centerX(inView: self)
