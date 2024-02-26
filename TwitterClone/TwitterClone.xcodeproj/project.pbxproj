@@ -39,6 +39,7 @@
 		DD025E972B84D6320059121A /* ActionSheetLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E962B84D6320059121A /* ActionSheetLauncher.swift */; };
 		DD025E992B84E3850059121A /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E982B84E3850059121A /* ActionSheetCell.swift */; };
 		DD025E9B2B84FE7A0059121A /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E9A2B84FE7A0059121A /* ActionSheetViewModel.swift */; };
+		DD025E9D2B8CBD600059121A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E9C2B8CBD600059121A /* Notification.swift */; };
 		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 		DDECF6B52B7211E6007BD349 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECF6B42B7211E6007BD349 /* ProfileController.swift */; };
 		DDECF6B72B721C6E007BD349 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECF6B62B721C6E007BD349 /* ProfileHeader.swift */; };
@@ -84,6 +85,7 @@
 		DD025E962B84D6320059121A /* ActionSheetLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetLauncher.swift; sourceTree = "<group>"; };
 		DD025E982B84E3850059121A /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		DD025E9A2B84FE7A0059121A /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
+		DD025E9C2B8CBD600059121A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		DDECF6B42B7211E6007BD349 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DDECF6B62B721C6E007BD349 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				DD025E802B6E991A0059121A /* User.swift */,
 				DD025E882B6F92CF0059121A /* Tweet.swift */,
+				DD025E9C2B8CBD600059121A /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				DDECF6B72B721C6E007BD349 /* ProfileHeader.swift in Sources */,
 				DD025E8B2B6FC49F0059121A /* TweetCell.swift in Sources */,
 				DDECF6B92B722A2C007BD349 /* ProfileFilterView.swift in Sources */,
+				DD025E9D2B8CBD600059121A /* Notification.swift in Sources */,
 				DD025E772B6943270059121A /* RegisterationController.swift in Sources */,
 				DD025E8F2B725FBA0059121A /* ProfileHeaderViewModel.swift in Sources */,
 				DD025E7D2B6E46480059121A /* AuthService.swift in Sources */,
