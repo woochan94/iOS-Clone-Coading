@@ -40,6 +40,7 @@
 		DD025E992B84E3850059121A /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E982B84E3850059121A /* ActionSheetCell.swift */; };
 		DD025E9B2B84FE7A0059121A /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E9A2B84FE7A0059121A /* ActionSheetViewModel.swift */; };
 		DD025E9D2B8CBD600059121A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E9C2B8CBD600059121A /* Notification.swift */; };
+		DD025E9F2B8CBF030059121A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025E9E2B8CBF030059121A /* NotificationService.swift */; };
 		DDE73C032B6A41A100CB93D9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE73C022B6A41A100CB93D9 /* Utilities.swift */; };
 		DDECF6B52B7211E6007BD349 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECF6B42B7211E6007BD349 /* ProfileController.swift */; };
 		DDECF6B72B721C6E007BD349 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECF6B62B721C6E007BD349 /* ProfileHeader.swift */; };
@@ -86,6 +87,7 @@
 		DD025E982B84E3850059121A /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		DD025E9A2B84FE7A0059121A /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
 		DD025E9C2B8CBD600059121A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DD025E9E2B8CBF030059121A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DDE73C022B6A41A100CB93D9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		DDECF6B42B7211E6007BD349 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DDECF6B62B721C6E007BD349 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				DD025E7C2B6E46480059121A /* AuthService.swift */,
 				DD025E7E2B6E94300059121A /* UserService.swift */,
 				DD025E862B6F8E040059121A /* TweetService.swift */,
+				DD025E9E2B8CBF030059121A /* NotificationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				DD025E832B6F5CF60059121A /* UploadTweetController.swift in Sources */,
 				DD025E812B6E991A0059121A /* User.swift in Sources */,
 				DD025E752B6942E20059121A /* LoginController.swift in Sources */,
+				DD025E9F2B8CBF030059121A /* NotificationService.swift in Sources */,
 				DD025E682B691D610059121A /* MainTabController.swift in Sources */,
 				DD025E932B78EE390059121A /* TweetHeader.swift in Sources */,
 				DD025E502B691BA20059121A /* SceneDelegate.swift in Sources */,
