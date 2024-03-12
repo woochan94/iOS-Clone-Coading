@@ -1,3 +1,4 @@
 --swiftversion 5.0
 --indent 4
 --commas inline
+--trimwhitespace nonblank-lines

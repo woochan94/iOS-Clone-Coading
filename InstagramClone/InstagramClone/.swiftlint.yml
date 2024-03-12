@@ -3,6 +3,7 @@ disabled_rules:
     # 라인 뒤 공백 제거
     - trailing_whitespace
     - unneeded_override
+    - unused_closure_parameter  
     
 opt_in_rules:
     # 인덴트 룰 적용

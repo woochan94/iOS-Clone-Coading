@@ -9,25 +9,33 @@
 /* Begin PBXBuildFile section */
 		DD025EAF2BA083550059121A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EAE2BA083550059121A /* AppDelegate.swift */; };
 		DD025EB12BA083550059121A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EB02BA083550059121A /* SceneDelegate.swift */; };
-		DD025EB32BA083550059121A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EB22BA083550059121A /* ViewController.swift */; };
 		DD025EB82BA083590059121A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD025EB72BA083590059121A /* Assets.xcassets */; };
 		DD025EBB2BA083590059121A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD025EB92BA083590059121A /* LaunchScreen.storyboard */; };
 		DD025EC92BA087300059121A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EC82BA087300059121A /* MainViewController.swift */; };
 		DD025ECE2BA08C300059121A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD025ECD2BA08C300059121A /* .swiftlint.yml */; };
 		DDA04EBA2BA08E9B00A841E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = DDA04EB92BA08E9B00A841E4 /* .swiftformat */; };
+		DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBB2BA0A84800A841E4 /* FeedController.swift */; };
+		DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBD2BA0A85300A841E4 /* SearchController.swift */; };
+		DDA04EC02BA0A87100A841E4 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBF2BA0A87100A841E4 /* ImageSelectorController.swift */; };
+		DDA04EC22BA0A87D00A841E4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EC12BA0A87D00A841E4 /* NotificationController.swift */; };
+		DDA04EC42BA0A88800A841E4 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EC32BA0A88800A841E4 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD025EAB2BA083550059121A /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD025EAE2BA083550059121A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD025EB02BA083550059121A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD025EB22BA083550059121A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD025EB72BA083590059121A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD025EBA2BA083590059121A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD025EBC2BA083590059121A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD025EC82BA087300059121A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD025ECD2BA08C300059121A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DDA04EB92BA08E9B00A841E4 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
+		DDA04EBB2BA0A84800A841E4 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		DDA04EBD2BA0A85300A841E4 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		DDA04EBF2BA0A87100A841E4 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		DDA04EC12BA0A87D00A841E4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DDA04EC32BA0A88800A841E4 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +76,6 @@
 				DD025EC22BA085CE0059121A /* Utils */,
 				DD025EAE2BA083550059121A /* AppDelegate.swift */,
 				DD025EB02BA083550059121A /* SceneDelegate.swift */,
-				DD025EB22BA083550059121A /* ViewController.swift */,
 				DD025EB72BA083590059121A /* Assets.xcassets */,
 				DD025EB92BA083590059121A /* LaunchScreen.storyboard */,
 				DD025EBC2BA083590059121A /* Info.plist */,
@@ -96,6 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				DD025EC82BA087300059121A /* MainViewController.swift */,
+				DDA04EBB2BA0A84800A841E4 /* FeedController.swift */,
+				DDA04EBD2BA0A85300A841E4 /* SearchController.swift */,
+				DDA04EBF2BA0A87100A841E4 /* ImageSelectorController.swift */,
+				DDA04EC12BA0A87D00A841E4 /* NotificationController.swift */,
+				DDA04EC32BA0A88800A841E4 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,8 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD025EB32BA083550059121A /* ViewController.swift in Sources */,
+				DDA04EC02BA0A87100A841E4 /* ImageSelectorController.swift in Sources */,
+				DDA04EC22BA0A87D00A841E4 /* NotificationController.swift in Sources */,
+				DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */,
 				DD025EAF2BA083550059121A /* AppDelegate.swift in Sources */,
+				DDA04EC42BA0A88800A841E4 /* ProfileController.swift in Sources */,
+				DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */,
 				DD025EB12BA083550059121A /* SceneDelegate.swift in Sources */,
 				DD025EC92BA087300059121A /* MainViewController.swift in Sources */,
 			);
