@@ -12,7 +12,8 @@
 		DD025EB82BA083590059121A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD025EB72BA083590059121A /* Assets.xcassets */; };
 		DD025EBB2BA083590059121A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD025EB92BA083590059121A /* LaunchScreen.storyboard */; };
 		DD025EC92BA087300059121A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EC82BA087300059121A /* MainViewController.swift */; };
-		DD025ECE2BA08C300059121A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD025ECD2BA08C300059121A /* .swiftlint.yml */; };
+		DD79822A2BA6DCF8000A484B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7982292BA6DCF8000A484B /* FeedCell.swift */; };
+		DD79822D2BA6DF7D000A484B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD79822C2BA6DF7D000A484B /* SnapKit */; };
 		DDA04EBA2BA08E9B00A841E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = DDA04EB92BA08E9B00A841E4 /* .swiftformat */; };
 		DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBB2BA0A84800A841E4 /* FeedController.swift */; };
 		DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBD2BA0A85300A841E4 /* SearchController.swift */; };
@@ -29,7 +30,7 @@
 		DD025EBA2BA083590059121A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD025EBC2BA083590059121A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD025EC82BA087300059121A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DD025ECD2BA08C300059121A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DD7982292BA6DCF8000A484B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		DDA04EB92BA08E9B00A841E4 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		DDA04EBB2BA0A84800A841E4 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		DDA04EBD2BA0A85300A841E4 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD79822D2BA6DF7D000A484B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +81,6 @@
 				DD025EB72BA083590059121A /* Assets.xcassets */,
 				DD025EB92BA083590059121A /* LaunchScreen.storyboard */,
 				DD025EBC2BA083590059121A /* Info.plist */,
-				DD025ECD2BA08C300059121A /* .swiftlint.yml */,
 				DDA04EB92BA08E9B00A841E4 /* .swiftformat */,
 			);
 			path = InstagramClone;
@@ -122,6 +123,7 @@
 		DD025EC62BA085E40059121A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD7982292BA6DCF8000A484B /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -141,7 +143,6 @@
 			buildConfigurationList = DD025EBF2BA083590059121A /* Build configuration list for PBXNativeTarget "InstagramClone" */;
 			buildPhases = (
 				DDA04EB32BA08DB400A841E4 /* SwiftFormat Script */,
-				DD025ECA2BA08B6F0059121A /* SwiftLint Script */,
 				DD025EA72BA083550059121A /* Sources */,
 				DD025EA82BA083550059121A /* Frameworks */,
 				DD025EA92BA083550059121A /* Resources */,
@@ -151,6 +152,9 @@
 			dependencies = (
 			);
 			name = InstagramClone;
+			packageProductDependencies = (
+				DD79822C2BA6DF7D000A484B /* SnapKit */,
+			);
 			productName = InstagramClone;
 			productReference = DD025EAB2BA083550059121A /* InstagramClone.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +183,9 @@
 				Base,
 			);
 			mainGroup = DD025EA22BA083550059121A;
+			packageReferences = (
+				DD79822B2BA6DF7D000A484B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DD025EAC2BA083550059121A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA04EBA2BA08E9B00A841E4 /* .swiftformat in Resources */,
-				DD025ECE2BA08C300059121A /* .swiftlint.yml in Resources */,
 				DD025EBB2BA083590059121A /* LaunchScreen.storyboard in Resources */,
 				DD025EB82BA083590059121A /* Assets.xcassets in Resources */,
 			);
@@ -203,25 +209,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DD025ECA2BA08B6F0059121A /* SwiftLint Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		DDA04EB32BA08DB400A841E4 /* SwiftFormat Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -256,6 +243,7 @@
 				DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */,
 				DD025EB12BA083550059121A /* SceneDelegate.swift in Sources */,
 				DD025EC92BA087300059121A /* MainViewController.swift in Sources */,
+				DD79822A2BA6DCF8000A484B /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD79822B2BA6DF7D000A484B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD79822C2BA6DF7D000A484B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD79822B2BA6DF7D000A484B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD025EA32BA083550059121A /* Project object */;
 }
