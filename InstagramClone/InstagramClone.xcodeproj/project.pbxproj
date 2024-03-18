@@ -14,6 +14,8 @@
 		DD025EC92BA087300059121A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD025EC82BA087300059121A /* MainViewController.swift */; };
 		DD79822A2BA6DCF8000A484B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7982292BA6DCF8000A484B /* FeedCell.swift */; };
 		DD79822D2BA6DF7D000A484B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD79822C2BA6DF7D000A484B /* SnapKit */; };
+		DD7982302BA868FB000A484B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79822F2BA868FB000A484B /* LoginController.swift */; };
+		DD7982322BA86904000A484B /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7982312BA86904000A484B /* RegisterController.swift */; };
 		DDA04EBA2BA08E9B00A841E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = DDA04EB92BA08E9B00A841E4 /* .swiftformat */; };
 		DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBB2BA0A84800A841E4 /* FeedController.swift */; };
 		DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBD2BA0A85300A841E4 /* SearchController.swift */; };
@@ -31,6 +33,8 @@
 		DD025EBC2BA083590059121A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD025EC82BA087300059121A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD7982292BA6DCF8000A484B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		DD79822F2BA868FB000A484B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		DD7982312BA86904000A484B /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		DDA04EB92BA08E9B00A841E4 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		DDA04EBB2BA0A84800A841E4 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		DDA04EBD2BA0A85300A841E4 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		DD025EC42BA085E00059121A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD79822E2BA868DC000A484B /* Authentication */,
 				DD025EC82BA087300059121A /* MainViewController.swift */,
 				DDA04EBB2BA0A84800A841E4 /* FeedController.swift */,
 				DDA04EBD2BA0A85300A841E4 /* SearchController.swift */,
@@ -133,6 +138,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DD79822E2BA868DC000A484B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DD79822F2BA868FB000A484B /* LoginController.swift */,
+				DD7982312BA86904000A484B /* RegisterController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +251,7 @@
 			files = (
 				DDA04EC02BA0A87100A841E4 /* ImageSelectorController.swift in Sources */,
 				DDA04EC22BA0A87D00A841E4 /* NotificationController.swift in Sources */,
+				DD7982322BA86904000A484B /* RegisterController.swift in Sources */,
 				DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */,
 				DD025EAF2BA083550059121A /* AppDelegate.swift in Sources */,
 				DDA04EC42BA0A88800A841E4 /* ProfileController.swift in Sources */,
@@ -244,6 +259,7 @@
 				DD025EB12BA083550059121A /* SceneDelegate.swift in Sources */,
 				DD025EC92BA087300059121A /* MainViewController.swift in Sources */,
 				DD79822A2BA6DCF8000A484B /* FeedCell.swift in Sources */,
+				DD7982302BA868FB000A484B /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

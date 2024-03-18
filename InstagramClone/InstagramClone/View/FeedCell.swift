@@ -151,5 +151,4 @@ class FeedCell: UICollectionViewCell {
     @objc func didTapUserName() {
         print("touch")
     }
-    
 }
