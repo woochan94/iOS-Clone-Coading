@@ -10,6 +10,8 @@ import UIKit
 class RegisterController: UIViewController {
     // MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
@@ -43,13 +45,14 @@ class RegisterController: UIViewController {
     private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        button.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        button.backgroundColor = viewModel.buttonBackgroundColor
         button.layer.cornerRadius = 5
         button.snp.makeConstraints {
             $0.height.equalTo(50)
         }
         button.titleLabel?.font = .boldSystemFont(ofSize: 12)
+        button.isEnabled = false
         return button
     }()
     
@@ -73,12 +76,29 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Actions
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender === passwordTextField {
+            viewModel.password = sender.text
+        } else if sender === fullNameTextField {
+            viewModel.fullName = sender.text
+        } else if sender === userNameTextField {
+            viewModel.userName = sender.text
+        }
+        
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = viewModel.formIsValid
     }
     
     // MARK: - Helpers
@@ -104,5 +124,12 @@ class RegisterController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
+    }
+    
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        userNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
