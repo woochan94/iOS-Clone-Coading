@@ -5,6 +5,7 @@
 //  Created by 정우찬 on 2024/03/12.
 //
 
+import FirebaseCore
 import UIKit
 
 @main
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
+        
+        FirebaseApp.configure()
         
         return true
     }
