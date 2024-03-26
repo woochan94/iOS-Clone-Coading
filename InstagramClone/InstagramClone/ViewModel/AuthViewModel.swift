@@ -5,12 +5,21 @@
 //  Created by 정우찬 on 2024/03/24.
 //
 
+import Alamofire
 import UIKit
 
 protocol AuthViewModel {
     var formIsValid: Bool { get }
     var buttonBackgroundColor: UIColor { get }
     var buttonTitleColor: UIColor { get }
+}
+
+struct AuthCredentials {
+    let email: String
+    let password: String
+    let fullName: String
+    let userName: String
+    let profileImage: UIImage
 }
 
 struct LoginViewModel: AuthViewModel {
@@ -46,5 +55,47 @@ struct RegistrationViewModel: AuthViewModel {
     
     var buttonTitleColor: UIColor {
         return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
+    }
+    
+    func uploadImage(_ image: UIImage, completion: @escaping (UploadResponse?, Error?) -> Void) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imageData, withName: "file", fileName: "\(NSUUID().uuidString)", mimeType: "image/jpeg")
+        }, to: "http://localhost:3000/users/upload").responseDecodable(of: UploadResponse.self) { response in
+            switch response.result {
+            case let .success(uploadResponse):
+                completion(uploadResponse, nil)
+            case let .failure(error):
+                print("DEBUG: Failed to upload image \(error.localizedDescription)")
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func registerUser(withCredential credentials: AuthCredentials, completion: @escaping (Error?) -> Void) {
+        uploadImage(credentials.profileImage) { response, error in
+            guard let url = response?.url, error == nil else {
+                completion(error)
+                return
+            }
+            
+            let parameters: Parameters = [
+                "email": credentials.email,
+                "password": credentials.password,
+                "fullName": credentials.fullName,
+                "userName": credentials.userName,
+                "profileImageUrl": url
+            ]
+            
+            AF.request("http://localhost:3000/users/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).response { response in
+                switch response.result {
+                case .success:
+                    completion(nil)
+                case let .failure(error):
+                    completion(error)
+                }
+            }
+        }
     }
 }

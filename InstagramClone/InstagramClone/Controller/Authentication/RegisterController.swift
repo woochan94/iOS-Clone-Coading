@@ -11,6 +11,7 @@ class RegisterController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
     
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -54,6 +55,7 @@ class RegisterController: UIViewController {
         }
         button.titleLabel?.font = .boldSystemFont(ofSize: 12)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -109,6 +111,25 @@ class RegisterController: UIViewController {
         present(picker, animated: true)
     }
     
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        guard let userName = userNameTextField.text else { return }
+        guard let profileImage = profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email, password: password, fullName: fullName, userName: userName, profileImage: profileImage)
+        
+        viewModel.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                return
+            }
+            
+            print("DEBUG: Successfully registered user with firestore")
+        }
+    }
+    
     // MARK: - Helpers
     
     func configureUI() {
@@ -147,6 +168,7 @@ class RegisterController: UIViewController {
 extension RegisterController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
         
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
