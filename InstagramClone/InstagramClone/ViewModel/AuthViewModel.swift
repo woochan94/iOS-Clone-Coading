@@ -73,10 +73,10 @@ struct RegistrationViewModel: AuthViewModel {
         }
     }
     
-    func registerUser(withCredential credentials: AuthCredentials, completion: @escaping (Error?) -> Void) {
+    func registerUser(withCredential credentials: AuthCredentials, completion: @escaping (RegisterResponse?, Error?) -> Void) {
         uploadImage(credentials.profileImage) { response, error in
             guard let url = response?.url, error == nil else {
-                completion(error)
+                completion(nil, error)
                 return
             }
             
@@ -88,12 +88,12 @@ struct RegistrationViewModel: AuthViewModel {
                 "profileImageUrl": url
             ]
             
-            AF.request("http://localhost:3000/users/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).response { response in
+            AF.request("http://localhost:3000/users/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseDecodable(of: RegisterResponse.self) { response in
                 switch response.result {
-                case .success:
-                    completion(nil)
+                case let .success(registerResponse):
+                    completion(registerResponse, nil)
                 case let .failure(error):
-                    completion(error)
+                    completion(nil, error)
                 }
             }
         }

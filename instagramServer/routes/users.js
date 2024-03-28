@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const firebase = require("../admin");
 const multer = require("multer");
+const axios = require("axios").default;
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -57,10 +58,25 @@ router.post("/register", async (req, res) => {
       uid: userRecord.uid,
     });
 
-    res.status(201).send();
+    const customToken = await firebase.auth().createCustomToken(userRecord.uid);
+
+    res.status(201).send({ customToken });
   } catch (error) {
     console.log(error.message);
     res.status(500).send(error.message);
+  }
+});
+
+router.post("/checkLoginStatus", async (req, res) => {
+  const idToken = req.body.idToken;
+  try {
+    const decodedToken = await firebase.auth().verifyIdToken(idToken);
+    const uid = decodedToken.uid;
+
+    res.status(200).send({ isLoggedIn: true, uid });
+  } catch (error) {
+    console.error("Error verifying Firebase ID token:", error);
+    res.status(401).send({ isLoggedIn: false, error: error.message });
   }
 });
 

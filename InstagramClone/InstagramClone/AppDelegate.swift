@@ -5,7 +5,7 @@
 //  Created by 정우찬 on 2024/03/12.
 //
 
-import FirebaseCore
+import Firebase
 import UIKit
 
 @main
@@ -13,11 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        window = UIWindow()
-        window?.rootViewController = MainViewController()
-        window?.makeKeyAndVisible()
-        
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()

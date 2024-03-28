@@ -5,6 +5,7 @@
 //  Created by 정우찬 on 2024/03/18.
 //
 
+import FirebaseAuth
 import UIKit
 
 class RegisterController: UIViewController {
@@ -120,13 +121,40 @@ class RegisterController: UIViewController {
         
         let credentials = AuthCredentials(email: email, password: password, fullName: fullName, userName: userName, profileImage: profileImage)
         
-        viewModel.registerUser(withCredential: credentials) { error in
+        viewModel.registerUser(withCredential: credentials) { [weak self] response, error in
             if let error = error {
                 print("DEBUG: Failed to register user \(error.localizedDescription)")
                 return
             }
             
-            print("DEBUG: Successfully registered user with firestore")
+            guard let customToken = response?.customToken else { return }
+            
+            Auth.auth().signIn(withCustomToken: customToken) { authResult, error in
+                if let error = error {
+                    print("DEBUG: Custom Token 인증 실패: \(error.localizedDescription)")
+                } else {
+                    // 사용자 인증 성공 시
+                    if let user = authResult?.user {
+                        // 사용자의 ID 토큰을 가져와서 저장
+                        user.getIDToken { idToken, error in
+                            if let error = error {
+                                print("DEBUG: ID 토큰 가져오기 실패: \(error.localizedDescription)")
+                                do {
+                                    try Auth.auth().signOut()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            } else if let idToken = idToken {
+                                // ID 토큰을 저장
+                                UserDefaults.standard.set(idToken, forKey: "idToken")
+                                if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                                    scene.showMainTabController()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     

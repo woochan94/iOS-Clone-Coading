@@ -10,3 +10,7 @@ import Foundation
 struct UploadResponse: Decodable {
     let url: String
 }
+
+struct RegisterResponse: Decodable {
+    let customToken: String
+}
