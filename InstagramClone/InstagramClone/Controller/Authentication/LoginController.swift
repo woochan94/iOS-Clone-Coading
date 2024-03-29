@@ -5,6 +5,7 @@
 //  Created by 정우찬 on 2024/03/18.
 //
 
+import FirebaseAuth
 import UIKit
 
 class LoginController: UIViewController {
@@ -30,7 +31,7 @@ class LoginController: UIViewController {
         textField.keyboardType = .emailAddress
         return textField
     }()
-
+    
     private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
@@ -42,6 +43,7 @@ class LoginController: UIViewController {
         }
         button.titleLabel?.font = .boldSystemFont(ofSize: 12)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -64,12 +66,12 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
-
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureUI()
         configureNotificationObservers()
     }
@@ -91,6 +93,36 @@ class LoginController: UIViewController {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
         loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         loginButton.isEnabled = viewModel.formIsValid
+    }
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Login Error - \(error.localizedDescription)")
+                return
+            }
+            
+            if let user = result?.user {
+                user.getIDToken { idToken, error in
+                    if let error = error {
+                        print("DEBUG: ID 토큰 가져오기 실패: \(error.localizedDescription)")
+                        do {
+                            try Auth.auth().signOut()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    } else if let idToken = idToken {
+                        // ID 토큰을 저장
+                        UserDefaults.standard.set(idToken, forKey: "idToken")
+                        if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                            scene.showMainTabController()
+                        }
+                    }
+                }
+            }
+        }
     }
     
     // MARK: - Helpers
