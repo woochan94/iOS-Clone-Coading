@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        checkUserIsLoggedIn()
+        window?.rootViewController = LaunchController()
         window?.makeKeyAndVisible()
     }
     
@@ -51,59 +51,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-struct LoginStatusResponse: Decodable {
-    let isLoggedIn: Bool
-    let uid: String
-}
-
 extension SceneDelegate {
-    // MARK: - API
-
-    func checkLoginStatus(_ idToken: String, completion: @escaping (Bool, String?, Error?) -> Void) {
-        let parameter: Parameters = [
-            "idToken": idToken
-        ]
-        
-        AF.request("http://localhost:3000/users/checkLoginStatus", method: .post, parameters: parameter, encoding: JSONEncoding.default).responseDecodable(of: LoginStatusResponse.self) { response in
-            switch response.result {
-            case let .success(loginStatus):
-                completion(loginStatus.isLoggedIn, loginStatus.uid, nil)
-            case let .failure(error):
-                completion(false, nil, error)
-            }
-        }
-    }
-    
-    // MARK: - Helper
-
-    func checkUserIsLoggedIn() {
-        if let idToken = UserDefaults.standard.string(forKey: "idToken"), idToken.isEmpty == false {
-            print("DEBUG: idToken 존재")
-            checkLoginStatus(idToken) { isLoggedIn, _, error in
-                if let error = error {
-                    print("DEBUG: Error checking login status: \(error.localizedDescription)")
-                    self.showLoginController()
-                    return
-                }
-
-                if isLoggedIn {
-                    self.showMainTabController()
-                } else {
-                    self.showLoginController()
-                }
-            }
-        } else {
-            print("DEBUG: idToken 없음")
-            showLoginController()
-        }
-    }
-    
     func showMainTabController() {
-        window?.rootViewController = MainTabController()
+        let mainTabController = MainTabController()
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = .fade
+        transition.subtype = .fromBottom
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        window?.layer.add(transition, forKey: kCATransition)
+        window?.rootViewController = mainTabController
     }
     
     func showLoginController() {
         UserDefaults.standard.removeObject(forKey: "idToken")
-        window?.rootViewController = UINavigationController(rootViewController: LoginController())
+        let loginController = UINavigationController(rootViewController: LoginController())
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = .fade
+        transition.subtype = .fromBottom
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        window?.layer.add(transition, forKey: kCATransition)
+        window?.rootViewController = loginController
     }
 }

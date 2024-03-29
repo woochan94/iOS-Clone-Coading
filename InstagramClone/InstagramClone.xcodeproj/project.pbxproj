@@ -24,6 +24,7 @@
 		DD7982412BB1CBDC000A484B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DD7982402BB1CBDC000A484B /* FirebaseStorage */; };
 		DD7982442BB30FED000A484B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD7982432BB30FED000A484B /* Alamofire */; };
 		DD7982462BB3163E000A484B /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7982452BB3163E000A484B /* AuthModel.swift */; };
+		DD7982502BB70841000A484B /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79824F2BB70841000A484B /* LaunchController.swift */; };
 		DDA04EBA2BA08E9B00A841E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = DDA04EB92BA08E9B00A841E4 /* .swiftformat */; };
 		DDA04EBC2BA0A84800A841E4 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBB2BA0A84800A841E4 /* FeedController.swift */; };
 		DDA04EBE2BA0A85300A841E4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA04EBD2BA0A85300A841E4 /* SearchController.swift */; };
@@ -48,6 +49,7 @@
 		DD7982392BB04ED5000A484B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		DD79823B2BB1CACB000A484B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD7982452BB3163E000A484B /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		DD79824F2BB70841000A484B /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		DDA04EB92BA08E9B00A841E4 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		DDA04EBB2BA0A84800A841E4 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		DDA04EBD2BA0A85300A841E4 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				DDA04EBF2BA0A87100A841E4 /* ImageSelectorController.swift */,
 				DDA04EC12BA0A87D00A841E4 /* NotificationController.swift */,
 				DDA04EC32BA0A88800A841E4 /* ProfileController.swift */,
+				DD79824F2BB70841000A484B /* LaunchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7982502BB70841000A484B /* LaunchController.swift in Sources */,
 				DDA04EC02BA0A87100A841E4 /* ImageSelectorController.swift in Sources */,
 				DDA04EC22BA0A87D00A841E4 /* NotificationController.swift in Sources */,
 				DD7982322BA86904000A484B /* RegisterController.swift in Sources */,
@@ -433,7 +437,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,7 +467,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
